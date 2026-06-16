@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fruit Shop — Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#" data-view="listing">Fruit Shop</a>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" role="navigation">
+        <a href="#" data-view="listing">Shop</a>
+        <a href="#" data-view="cart">Cart</a>
+        <a href="#" data-view="checkout">Checkout</a>
+      </nav>
+      <div class="header-actions">
+        <input id="search-input" aria-label="Search products" placeholder="Search fruits...">
+        <button id="cart-button" class="cart-btn" aria-label="View cart">Cart <span id="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Product Listing View -->
+    <section id="listing-view" class="view">
+      <h1>Fresh Fruits</h1>
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- Product Details View -->
+    <section id="details-view" class="view hidden">
+      <button id="back-to-list">← Back to shop</button>
+      <div id="details-content" class="details-content"></div>
+    </section>
+
+    <!-- Cart View -->
+    <section id="cart-view" class="view hidden">
+      <h1>Your Cart</h1>
+      <div id="cart-contents"></div>
+    </section>
+
+    <!-- Checkout View -->
+    <section id="checkout-view" class="view hidden">
+      <h1>Checkout</h1>
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-row"><label>Full name<input name="name" required></label></div>
+        <div class="form-row"><label>Email<input name="email" type="email" required></label></div>
+        <div class="form-row"><label>Address<input name="address" required></label></div>
+        <div class="form-row two-up">
+          <label>City<input name="city" required></label>
+          <label>ZIP<input name="zip" required></label>
+        </div>
+        <div class="form-row"><button type="submit" class="btn primary">Place Order</button></div>
+      </form>
+      <aside id="order-summary" class="order-summary"></aside>
+    </section>
+
+    <!-- Confirmation View -->
+    <section id="confirmation-view" class="view hidden">
+      <h1>Thank you!</h1>
+      <div id="confirmation-content"></div>
+      <button id="continue-shopping" class="btn">Continue shopping</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Fruit Shop Prototype</div>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
